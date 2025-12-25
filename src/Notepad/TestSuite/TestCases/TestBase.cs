@@ -1,5 +1,4 @@
-﻿
-using Serilog;
+﻿using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Notepad.src.Notepad.TestSuite.TestCases
 {
-    public class TestBase : NotepadTestSuiteBase
+    public class TestBase : TestSuiteSetup
     {
         [Test]
         public void Login()
         {
            
-            Log.Information("Enter email : vuhuyen@gmail.com");
-            Log.Information("Enter password : 12345464");
+            Log.Information($"Enter email :{Config.UserEmail}");
+            Log.Information($"Enter password :{Config.UserPassword}");
           
 
         }
@@ -25,6 +24,12 @@ namespace Notepad.src.Notepad.TestSuite.TestCases
         {
             Log.Information("Add to course");
             Log.Information("Create quizz");
+        }
+
+        [Test]
+        public void FaileCase()
+        {
+            Assert.Fail();
         }
     }
 }

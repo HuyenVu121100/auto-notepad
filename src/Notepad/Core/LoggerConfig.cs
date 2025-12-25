@@ -14,7 +14,7 @@ namespace Notepad.src.Notepad.Core
 
             string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
-            string reportFolder = Path.Combine(baseDirectory, "Reports");
+            string reportFolder = Path.Combine(baseDirectory, "../../../Reports");
 
             if (!Directory.Exists(reportFolder))
             {

@@ -4,10 +4,10 @@ using NUnit.Framework.Interfaces;
 using Serilog;
 using System.Diagnostics;
 
-namespace Notepad.src.Notepad.TestSuite;
+namespace Notepad.src.Notepad.TestSuite.TestCases;
 
 [TestFixture]
-public class NotepadTestSuiteBase
+public class TestSuiteSetup
 {
     private Process _process;
 

@@ -19,10 +19,13 @@ namespace Notepad.src.Notepad.TestSuite
                 Configuration = new ConfigurationBuilder()
                     .SetBasePath(baseDir)
                     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                    .AddJsonFile("appsettings.staging.json", optional: true, reloadOnChange: true)
+                    .AddJsonFile("appsettings.prod.json", optional: true, reloadOnChange: true)
                     .Build();
 
                 ApplicationPath = Configuration["ApplicationPath"];
                 UserEmail = Configuration["UserEmail"];
+                UserPassword = Configuration["UserPassword"];
             }
             catch (Exception ex)
             {
@@ -34,5 +37,6 @@ namespace Notepad.src.Notepad.TestSuite
        
         public static string ApplicationPath { get; private set; }
         public static string UserEmail { get; private set; }
+        public static string UserPassword { get; private set; }
     }
 }
