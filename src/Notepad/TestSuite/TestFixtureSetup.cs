@@ -10,12 +10,12 @@ public class TestFixtureSetup
     [OneTimeSetUp]
     public void GlobalSetup()
     {
-        // Initialize Serilog with HTML formatting support
+      
         LoggerConfig.InitializeLogger();
 
         TestContext.WriteLine("=== GLOBAL SETUP INITIALIZED ===");
 
-        // Professional Header for the HTML Report
+       
         Log.Information("<div style='background-color: #e3f2fd; padding: 15px; border-radius: 5px; border-left: 5px solid #2196F3;'>");
         Log.Information("<h2>📊 AUTOMATION EXECUTION REPORT</h2>");
         Log.Information($"<p><b>Execution Start:</b> {DateTime.Now:yyyy-MM-dd HH:mm:ss}</p>");
@@ -33,7 +33,7 @@ public class TestFixtureSetup
         Log.Information($"<p><b>Finish Time:</b> {DateTime.Now:yyyy-MM-dd HH:mm:ss}</p>");
         Log.Information("</div>");
 
-        // Ensure all logs are written before closing
+      
         LoggerConfig.ShutdownLogger();
 
         TestContext.WriteLine("=== GLOBAL TEARDOWN COMPLETED ===");
